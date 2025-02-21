@@ -15,38 +15,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fusca Azul - O Jogo</title>
     <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #e6f3ff;
+            --accent-color: #3b82f6;
+            --text-color: #1f2937;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             text-align: center;
-            background-color: #e6f3ff;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
+
         h1 {
-            color: #0000cd;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin: 1.5rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
         img {
             max-width: 100%;
             height: auto;
-            margin: 20px 0;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
         .rules {
             text-align: left;
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 2rem 0;
         }
+
         .rules ol {
-            padding-left: 20px;
+            padding-left: 1.5rem;
+            counter-reset: item;
         }
+
         .rules li {
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
         }
+
+        .rules li::marker {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
         .paragraph {
-            margin-left: 20px;
+            margin: 0.8rem 0 0.8rem 1.5rem;
             font-style: italic;
+            color: #4b5563;
+            padding: 0.5rem 1rem;
+            border-left: 3px solid var(--accent-color);
+            background-color: #f8fafc;
+            border-radius: 0 5px 5px 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .rules {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
